@@ -1,0 +1,26 @@
+<head>
+  <title>reactive_table_test</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> hello}}
+</body>
+
+<template name="hello">
+    <div class="container">
+        <div>
+            <ul class="nav nav-pills">
+                {{#each tabs}}
+                    <li><a href="#">{{_id}}</a></li>
+                {{/each}}
+
+            </ul>
+        </div>
+        <br>
+        <div>
+            {{> reactiveTable collection=classifier settings=tableSettings}}
+        </div>
+    </div>
+</template>
